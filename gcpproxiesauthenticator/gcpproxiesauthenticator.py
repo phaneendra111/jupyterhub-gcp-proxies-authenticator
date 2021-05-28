@@ -127,7 +127,8 @@ class GCPProxiesAuthenticator(Authenticator):
     authentication to JupyterHub.
     """
     login_handler = ProxyUserLoginHandler
-
+    
+   
     check_header = Unicode(
         '',
         config=True,
@@ -164,6 +165,12 @@ class GCPProxiesAuthenticator(Authenticator):
         config=True,
         help=""" HTML page to render once the user is authenticated. For example
         'welcome.html'. """
+    )
+    
+    profile = Unicode(
+        '',
+        config=True,
+        help=""" Name of the profile """,
     )
 
     def get_handlers(self, app):
